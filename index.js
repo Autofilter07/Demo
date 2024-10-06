@@ -21,6 +21,7 @@ const db = new sqlite3.Database('./mydatabase.db', (err) => {
 
 // Create a table if it doesn't exist
 db.serialize(() => {
+  // db.run("DROP TABLE users");
   db.run(`CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
